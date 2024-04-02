@@ -20,7 +20,9 @@ import colorfulOwn from "../../assets/users/Ellipse9.svg";
 import hell from "../../assets/treasure-monkey/hell.svg";
 import hellOwn from "../../assets/users/Ellipse10.svg";
 import CustomButton from "../button";
-import { motion } from "framer-motion";
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import { scroll } from "framer-motion/dom";
+import { useEffect, useRef } from "react";
 
 const TreasureCardDate = [
   {
@@ -108,7 +110,7 @@ const TreasureCardDate = [
 const slideCotainerVariant = {
   hidden: {
     opacity: 0,
-    y: 200,
+    y: 100,
   },
   visible: {
     opacity: 1,
@@ -119,44 +121,77 @@ const slideCotainerVariant = {
   },
 };
 
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance]);
+}
+
 const MonkeyTreasures = () => {
+  const y = useScroll().scrollYProgress;
+  const yTransformed = useParallax(y, 100);
+  const previousScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < previousScrollY.current) {
+        slideCotainerVariant.hidden.y = 100;
+      } else {
+        slideCotainerVariant.hidden.y = -100;
+      }
+      previousScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="container mx-auto xl:my-10 my-4">
-      <div className="flex flex-col items-center justify-center space-y-2 mb-20">
-        <p className="flex items-center justify-center xl:text-5xl text-2xl text-[#FFFFFF] font-Poppins">
-          MONTHLY MONKEY TREASURES
-        </p>
-        <p className="text-sm font-thin text-[#FFFFFF] max-w-[600px] text-center">
-          Discover one of the most popular NFT creations picked for you. Place
-          your bid and bi the first to have these treasures. All of the artworks
-          are limited selections.
-        </p>
+    <div>
+      <div className="container mx-auto px-4">
+        <motion.div
+          style={{ y: yTransformed }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="flex flex-col items-center justify-center space-y-2 xl:mb-20 mb-2"
+        >
+          <p className="flex items-center justify-center xl:text-5xl text-2xl text-[#FFFFFF] font-Poppins">
+            MONTHLY MONKEY TREASURES
+          </p>
+          <p className="text-sm font-thin text-[#FFFFFF] max-w-[600px] text-center">
+            Discover one of the most popular NFT creations picked for you. Place
+            your bid and bi the first to have these treasures. All of the
+            artworks are limited selections.
+          </p>
+        </motion.div>
+        <div className="grid xl:grid-cols-5 grid-cols-1 xl:gap-4 gap-8">
+          {TreasureCardDate.map((item: any, index: number) => {
+            return (
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                key={index}
+                className="flex flex-col space-y-2 xl:row-span-2 cursor-pointer"
+                variants={slideCotainerVariant}
+                initial="hidden"
+                whileInView="visible"
+              >
+                <TreasureCard
+                  ownName={item.ownName}
+                  ownPhoto={item.ownPhoto}
+                  category={item.category}
+                  nftName={item.nftName}
+                  nft={item.nft}
+                  price={item.price}
+                />
+              </motion.div>
+            );
+          })}
+        </div>
+        <div className="flex items-center justify-center m-10">
+          <CustomButton name="VIEW MORE" />
+        </div>
       </div>
-      <div className="grid xl:grid-cols-5 grid-cols-1 xl:gap-4 gap-8">
-        {TreasureCardDate.map((item: any, index: number) => {
-          return (
-            <motion.div
-              key={index}
-              className="flex flex-col space-y-2 xl:row-span-2 "
-              variants={slideCotainerVariant}
-              initial="hidden" // Set the initial variant
-              whileInView="visible"
-            >
-              <TreasureCard
-                ownName={item.ownName}
-                ownPhoto={item.ownPhoto}
-                category={item.category}
-                nftName={item.nftName}
-                nft={item.nft}
-                price={item.price}
-              />
-            </motion.div>
-          );
-        })}
-      </div>
-      <div className="flex items-center justify-center m-10">
-        <CustomButton name="VIEW MORE" />
-      </div>
+      <div className="w-full h-[1px] bg-[red] bg-gradient-to-l from-[#E025CE] xl:from-50% from-30% to-[#581c87] xl:to-90% to-60%  my-4"></div>
     </div>
   );
 };

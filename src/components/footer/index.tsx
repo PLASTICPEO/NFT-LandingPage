@@ -7,7 +7,7 @@ import FooterDesktopList from "./desktop";
 const Footer = () => {
   return (
     <div>
-      <div className="w-full h-[1px] bg-[red] bg-gradient-to-r from-[#E025CE] xl:from-50% from-30% to-indigo-950 xl:to-90% to-60% "></div>
+      <div className="w-full h-[1px] bg-[red] bg-gradient-to-r from-[#E025CE] xl:from-50% from-30% to-[#581c87] xl:to-90% to-60% "></div>
       <div className="grid xl:grid-cols-4 grid-cols-1 gap-4 px-20 py-8 ">
         <div className="flex flex-col space-y-5">
           <Logo />

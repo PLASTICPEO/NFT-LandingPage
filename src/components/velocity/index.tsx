@@ -34,7 +34,8 @@ const companiesLogos = [
 
 const CompanyLogos = () => {
   return (
-    <div className="my-20 py-10 border-y-[1px] border-violet-900">
+    <div className="my-20 py-10">
+      <div className="w-full h-[1px] bg-[red] bg-gradient-to-r from-[#E025CE] xl:from-50% from-30% to-[#581c87] xl:to-90% to-60% mb-6"></div>
       <div className="text-center">
         <div className="xl:flex  xl:items-center xl:justify-between px-20">
           {companiesLogos.map((item: any, index: number) => {
@@ -54,6 +55,7 @@ const CompanyLogos = () => {
           })}
         </div>
       </div>
+      <div className="w-full h-[1px] bg-[red] bg-gradient-to-l from-[#E025CE] xl:from-50% from-30% to-[#581c87] xl:to-90% to-60% mt-6"></div>
     </div>
   );
 };
