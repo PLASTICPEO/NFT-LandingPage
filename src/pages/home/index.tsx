@@ -4,6 +4,7 @@ import MonkeyTreasures from "../../components/monkeyTreasures";
 import TrendingAuctions from "../../components/trendingAuctions";
 import CompanyLogos from "../../components/velocity";
 import HowToBecomeNftCreator from "../../components/nftCreator";
+import PopularCreator from "../../components/popularCreator";
 
 const Home = () => {
   const { scrollYProgress } = useScroll();
@@ -14,6 +15,7 @@ const Home = () => {
       <TrendingAuctions />
       <MonkeyTreasures />
       <HowToBecomeNftCreator />
+      <PopularCreator />
       <motion.div
         style={{ scaleX: scrollYProgress }}
         className="progress-bar"

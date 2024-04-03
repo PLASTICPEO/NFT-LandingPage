@@ -41,7 +41,7 @@ const slideMonkeyCard = {
 
 const HeroBanner = () => {
   return (
-    <div className="grid xl:grid-cols-2 xl:grid-rows-4 grid-cols-1 gap-8 xl:pt-28 pt-20 container mx-auto">
+    <div className="grid xl:grid-cols-2 xl:grid-rows-4 grid-cols-1 gap-8 xl:pt-28 pt-20 px-2 container mx-auto">
       <motion.div
         className="flex flex-col space-y-2 xl:row-span-2 "
         variants={slideCotainerVariant}

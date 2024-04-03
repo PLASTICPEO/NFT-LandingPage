@@ -110,7 +110,7 @@ const TreasureCardDate = [
 const slideCotainerVariant = {
   hidden: {
     opacity: 0,
-    y: 100,
+    y: 150,
   },
   visible: {
     opacity: 1,
@@ -134,9 +134,9 @@ const MonkeyTreasures = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY < previousScrollY.current) {
-        slideCotainerVariant.hidden.y = 100;
+        slideCotainerVariant.hidden.y = 150;
       } else {
-        slideCotainerVariant.hidden.y = -100;
+        slideCotainerVariant.hidden.y = -150;
       }
       previousScrollY.current = currentScrollY;
     };
@@ -154,7 +154,7 @@ const MonkeyTreasures = () => {
           whileInView={{ opacity: 1 }}
           className="flex flex-col items-center justify-center space-y-2 xl:mb-20 mb-2"
         >
-          <p className="flex items-center justify-center xl:text-5xl text-2xl text-[#FFFFFF] font-Poppins">
+          <p className="flex items-center justify-center text-center xl:text-5xl text-2xl text-[#FFFFFF] font-Poppins">
             MONTHLY MONKEY TREASURES
           </p>
           <p className="text-sm font-thin text-[#FFFFFF] max-w-[600px] text-center">
@@ -191,7 +191,7 @@ const MonkeyTreasures = () => {
           <CustomButton name="VIEW MORE" />
         </div>
       </div>
-      <div className="w-full h-[1px] bg-[red] bg-gradient-to-l from-[#E025CE] xl:from-50% from-30% to-[#581c87] xl:to-90% to-60%  my-4"></div>
+      <div className="w-1/2 h-[1px]  bg-gradient-to-r from-[#E025CE]   my-4"></div>
     </div>
   );
 };
