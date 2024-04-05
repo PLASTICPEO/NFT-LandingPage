@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import monkey from "../../assets/monkeys/HeroMonkey.svg";
 import VanessaHurt from "../../assets/creators/vanesaHurt.svg";
 import AlexaBrains from "../../assets/creators/AlexaBrains.svg";
 import AlexandraSmith from "../../assets/creators/AlexandraSmith.svg";
@@ -12,13 +11,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
-import {
-  EffectFade,
-  FreeMode,
-  Mousewheel,
-  Pagination,
-  Zoom,
-} from "swiper/modules";
+import { EffectFade, Mousewheel } from "swiper/modules";
+import PopularCreatorCard from "./card";
 
 const CreatorData = [
   {
@@ -79,7 +73,12 @@ const CreatorData = [
 
 const PopularCreator = () => {
   return (
-    <div className="flex items-center justify-center flex-col h-full overflow-hidden mb-8">
+    <div className="flex items-center justify-center flex-col h-full overflow-hidden mb-16">
+      <div>
+        <p className="text-5xl text-[#FFFFFF] my-10 font-[Roboto]">
+          POPULAR CREATORS
+        </p>
+      </div>
       <Swiper
         breakpoints={{
           340: {
@@ -103,48 +102,15 @@ const PopularCreator = () => {
       >
         {CreatorData.map((item: any, index: number) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col xl:space-y-8 space-y-14 font-Poppins group relative shadow-xl text-white  rounded-xl p-2  xl:mx-0 mx-2   overflow-hidden cursor-pointer bg-gradient-to-r from-violet-800 to-indigo-900 hover:from-violet-800/65">
-              <div className="flex flex-col items-center justify-center">
-                <img
-                  className="mx-auto relative xl:w-fit w-full "
-                  src={item.cover}
-                  alt=""
-                />
-                <img
-                  className="mx-auto  xl:w-11 w-20 absolute xl:top-20 top-32"
-                  src={item.creator}
-                  alt=""
-                />
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-4">
-                <p className="text-xs text-[#FFFFFF] font-bold">{item.name}</p>
-                <p className="text-xs text-[#B8B8B8] font-Roboto w-40 text-center">
-                  {item.about}
-                </p>
-                <div className="flex items-center justify-center space-x-4">
-                  <button className="border-[1px] text-xs px-6 py-1.5 rounded-md w-24 h-8 text-center hover:bg-[#FFFFFF] hover:text-[Black] shadow-md hover:shadow-[#FFFFFF]">
-                    Follow
-                  </button>
-                  <button className="border-[1px] text-xs px-6 py-1.5 rounded-md w-24 h-8 text-center hover:bg-[#FFFFFF] hover:text-[Black] shadow- hover:shadow-[#FFFFFF]">
-                    Message
-                  </button>
-                </div>
-                <div className="flex items-center justify-between space-x-6">
-                  <div className="text-[#FFFFFF] flex flex-col items-center justify-center text-xs">
-                    <p className="text-[#B8B8B8]">Art Works</p>
-                    <p className="text-[#FFFFFF]">{item.artWorks}</p>
-                  </div>
-                  <div className="text-[#FFFFFF] flex flex-col items-center justify-center text-xs">
-                    <p className="text-[#B8B8B8]">Followers</p>
-                    <p className="text-[#FFFFFF]">{item.followers}</p>
-                  </div>
-                  <div className="text-[#FFFFFF] flex flex-col items-center justify-center text-xs">
-                    <p className="text-[#B8B8B8]">Following</p>
-                    <p className="text-[#FFFFFF]">{item.following}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <PopularCreatorCard
+              name={item.name}
+              cover={item.cover}
+              creator={item.creator}
+              about={item.about}
+              artWorks={item.artWorks}
+              followers={item.followers}
+              following={item.following}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

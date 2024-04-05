@@ -28,7 +28,7 @@ const HowToBecomeNftCreator = () => {
     <div className="relative">
       <div className="container mx-auto w-full">
         <div>
-          <p className="flex items-center justify-center xl:text-5xl text-xl px-2 text-center text-[#FFFFFF] font-Poppins">
+          <p className="flex items-center justify-center xl:text-5xl text-xl px-2 text-center text-[#FFFFFF] font-Roboto">
             HOW TO BECOME MONKEY NFT CREATOR
           </p>
         </div>

@@ -19,6 +19,21 @@
 
 
   @layer components {
-   
+    .company-logos-container {
+      /* Set initial position and size */
+
+
+
+      animation: moveLeftRight 10s linear infinite;
+    }
+    
+    @keyframes moveLeftRight {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%); /* Adjust the distance for full movement */
+      }
+    }
   }
 

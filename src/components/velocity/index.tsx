@@ -34,28 +34,28 @@ const companiesLogos = [
 
 const CompanyLogos = () => {
   return (
-    <div className="my-20 py-10">
-      <div className="w-full h-[1px] bg-[red] bg-gradient-to-r from-[#E025CE] xl:from-50% from-30% to-[#581c87] xl:to-90% to-60% mb-6"></div>
+    <div className="my-20 py-10 relative ">
+      <div className="w-1/2 h-[1px]  bg-gradient-to-r from-[#E025CE] my-4"></div>
       <div className="text-center">
-        <div className="xl:flex  xl:items-center xl:justify-between px-20">
+        <div className="flex  items-center justify-between xl:px-20 px-2 ">
           {companiesLogos.map((item: any, index: number) => {
             return (
               <div
                 key={index}
-                className="flex xl:items-center justify-center xl:justify-between space-x-2 text-[#FFFFFF] font-Poppins text-sm font-thin  "
+                className="flex flex-col xl:items-center  xl:justify-between justify-center space-y-2 text-[#FFFFFF] font-Poppins text-sm font-thin  "
               >
                 <img
-                  className="hover:scale-105 cursor-pointer"
+                  className="hover:scale-105 cursor-pointer w-12"
                   src={item.icon}
                   alt={item.name}
                 />
-                <p>{item.name}</p>
+                <p className="w-max xl:block hidden">{item.name}</p>
               </div>
             );
           })}
         </div>
       </div>
-      <div className="w-full h-[1px] bg-[red] bg-gradient-to-l from-[#E025CE] xl:from-50% from-30% to-[#581c87] xl:to-90% to-60% mt-6"></div>
+      <div className="absolute right-0 bottom-0 w-1/2 h-[1px] bg-gradient-to-l  from-lime-300 my-4"></div>
     </div>
   );
 };

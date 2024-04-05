@@ -1,15 +1,8 @@
-import {
-  motion,
-  useMotionValue,
-  useScroll,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import CustomButton from "../button";
 import HeadLine from "./headline";
 import HeroCard from "./heroCard";
 import HowItWork from "./howitwork";
-import { useEffect, useRef, useState } from "react";
 
 const slideCotainerVariant = {
   hidden: {

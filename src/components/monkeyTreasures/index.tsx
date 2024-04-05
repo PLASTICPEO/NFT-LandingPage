@@ -21,7 +21,7 @@ import hell from "../../assets/treasure-monkey/hell.svg";
 import hellOwn from "../../assets/users/Ellipse10.svg";
 import CustomButton from "../button";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
-import { scroll } from "framer-motion/dom";
+
 import { useEffect, useRef } from "react";
 
 const TreasureCardDate = [
@@ -167,8 +167,6 @@ const MonkeyTreasures = () => {
           {TreasureCardDate.map((item: any, index: number) => {
             return (
               <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.8 }}
                 key={index}
                 className="flex flex-col space-y-2 xl:row-span-2 cursor-pointer"
                 variants={slideCotainerVariant}

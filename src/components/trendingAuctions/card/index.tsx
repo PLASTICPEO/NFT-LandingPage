@@ -1,7 +1,6 @@
 import { TrendingCardPropsTypes } from "./index.props.types";
 import ethIcon from "../../../assets/icons/ethIcon.svg";
 import CardButton from "../../cardButton";
-import CardTimer from "../../herobanner/heroCard/timer";
 import { motion } from "framer-motion";
 
 const TrendingCard: React.FC<TrendingCardPropsTypes> = ({
