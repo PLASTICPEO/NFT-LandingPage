@@ -75,7 +75,7 @@ const PopularCreator = () => {
   return (
     <div className="flex items-center justify-center flex-col h-full overflow-hidden mb-16">
       <div>
-        <p className="text-5xl text-[#FFFFFF] my-10 font-[Roboto]">
+        <p className="xl:text-5xl text-2xl text-[#FFFFFF] my-10 text-center font-[Roboto]">
           POPULAR CREATORS
         </p>
       </div>

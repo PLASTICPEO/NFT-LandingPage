@@ -6,9 +6,7 @@ export default {
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
         Poppins: ["Poppins", "sans-serif"],
-      },
-      fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        Reddit: ["Reddit Mono", "monospace"],
       },
     },
   },

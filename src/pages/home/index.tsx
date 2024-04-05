@@ -6,6 +6,7 @@ import CompanyLogos from "../../components/velocity";
 import HowToBecomeNftCreator from "../../components/nftCreator";
 import PopularCreator from "../../components/popularCreator";
 import PopularCollections from "../../components/popularCollections";
+import SubscribeComponent from "../../components/subscribe";
 
 const Home = () => {
   const { scrollYProgress } = useScroll();
@@ -18,6 +19,7 @@ const Home = () => {
       <HowToBecomeNftCreator />
       <PopularCreator />
       <PopularCollections />
+      <SubscribeComponent />
       <motion.div
         style={{ scaleX: scrollYProgress }}
         className="progress-bar"

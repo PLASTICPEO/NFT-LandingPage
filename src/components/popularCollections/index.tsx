@@ -57,7 +57,7 @@ const PopularCollections = () => {
       <p className="flex items-center justify-center my-10 xl:text-5xl text-xl px-2 text-center text-[#FFFFFF] font-Roboto">
         POPULAR COLLECTIONS
       </p>
-      <div className="grid grid-cols-3 gap-6 ">
+      <div className="grid xl:grid-cols-3 grid-cols-1 gap-6 mx-4">
         {popularCollectionData.map((item: any, index: number) => {
           return (
             <div key={index}>
