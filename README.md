@@ -3,7 +3,6 @@
   <h3 align="center">NFT Landing Page</h3>
 
   <p align="center">
-    NFT Landing Page
     <br />
     <br />
     <a href="https://monkeypage.netlify.app/">View Live</a>
