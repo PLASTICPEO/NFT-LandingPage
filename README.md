@@ -5,7 +5,7 @@
   <p align="center">
     <br />
     <br />
-    <a href="https://monkeypage.netlify.app/">View Live</a>
+    <a href="https://nft-landingpage.onrender.com/">View Live</a>
   </p>
 </p>
 
