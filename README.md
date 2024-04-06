@@ -6,7 +6,7 @@
     NFT Landing Page
     <br />
     <br />
-    <a href="https://roompg.netlify.app/">View Demo</a>
+    <a href="https://monkeypage.netlify.app/">View Demo</a>
   </p>
 </p>
 

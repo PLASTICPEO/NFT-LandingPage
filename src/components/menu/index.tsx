@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Divide, Spin as Hamburger } from "hamburger-react";
+import { Spin as Hamburger } from "hamburger-react";
 import { useEffect, useState } from "react";
 
 const navItems = ["Home", "MarketPlace", "Creators", "Resource"];

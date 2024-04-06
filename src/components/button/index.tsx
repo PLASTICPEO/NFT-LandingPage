@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { CustomButtonTypes } from "./customButton.types";
 
 const CustomButton: React.FC<CustomButtonTypes> = ({ name, triggerProps }) => {
