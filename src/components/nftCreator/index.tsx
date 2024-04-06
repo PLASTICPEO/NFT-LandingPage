@@ -25,7 +25,7 @@ const CreatorNFTcardDate = [
 
 const HowToBecomeNftCreator = () => {
   return (
-    <div className="relative">
+    <div id="Resource" className="relative">
       <div className="container mx-auto w-full">
         <div>
           <p className="flex items-center justify-center xl:text-5xl text-xl px-2 text-center text-[#FFFFFF] font-Roboto">

@@ -10,7 +10,7 @@ const NavMenu: React.FC<NavMenuProps> = ({ items }) => {
               className="text-[#B8B8B8] font-[Poppins] text-sm hover:text-[#FFFFFF] cursor-pointer"
               key={index}
             >
-              {item}
+              <a href={`#${item}`}>{item}</a>
             </li>
           );
         })}

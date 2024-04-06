@@ -20,7 +20,7 @@
 
 
   @layer components {
-    .parallax {
+    /* .parallax {
       overflow: hidden;
       letter-spacing: -2px;
       line-height: 0.8;
@@ -43,7 +43,7 @@
     .parallax span {
       display: block;
       margin-right: 30px;
-    }
+    } */
     
   }
 

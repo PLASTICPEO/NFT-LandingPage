@@ -7,17 +7,26 @@ const navItems = ["Home", "MarketPlace", "Creators", "Resource"];
 const MobileMenu = () => {
   const [toggle, setToggle] = useState(false);
 
+  const handleScroll = () => {
+    setToggle(false);
+  };
+
   useEffect(() => {
-    console.log(toggle);
-  }, [toggle]);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div>
-      <div className="xl:hidden fixed top-3 left-3 z-50">
+      <div className="xl:hidden absolute top-3 left-3 z-50">
         <Hamburger
-          color={!toggle ? "#FFFFFF" : "#76F7BF"}
+          toggled={toggle}
+          toggle={setToggle}
+          color="#FFFFFF"
           duration={0.8}
-          onToggle={(toggled) => setToggle(toggled)}
+          size={28}
         />
       </div>
 
@@ -25,26 +34,24 @@ const MobileMenu = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="fixed top-0 left-0 flex items-center justify-center  w-full h-96 bg-gradient-to-tl from-violet-500 to-stone-500 shadow-lg shadow-stone-500"
+          className="absolute top-0 left-0 flex items-center justify-center w-full h-96 bg-gradient-to-tl from-violet-500 to-stone-500 shadow-lg shadow-[#FFFFFF]"
         >
-          <ul className="flex flex-col items-center justify-center space-y-10 w-full">
-            {navItems.map((item: any, index: number) => {
-              return (
-                <motion.li
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    ease: "anticipate",
-                    duration: 2,
-                    x: { duration: 1.5 },
-                  }}
-                  key={index}
-                  className="text-[#FFFFFF]/80 text-xl font-Reddit border-b-[1px] w-full text-center p-2"
-                >
-                  {item}
-                </motion.li>
-              );
-            })}
+          <ul className="flex flex-col items-center justify-center space-y-6 w-full">
+            {navItems.map((item, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  ease: "anticipate",
+                  duration: 1,
+                  x: { duration: 1.5 },
+                }}
+                className="text-[#FFFFFF]/80 text-xl font-Reddit w-full text-center p-2"
+              >
+                <a href={`#${item}`}>{item}</a>
+              </motion.li>
+            ))}
           </ul>
         </motion.div>
       ) : null}

@@ -73,7 +73,10 @@ const CreatorData = [
 
 const PopularCreator = () => {
   return (
-    <div className="flex items-center justify-center flex-col h-full overflow-hidden mb-16">
+    <div
+      id="Creators"
+      className="flex items-center justify-center flex-col h-full overflow-hidden mb-16"
+    >
       <div>
         <p className="xl:text-5xl text-2xl text-[#FFFFFF] my-10 text-center font-[Roboto]">
           POPULAR CREATORS
@@ -90,7 +93,6 @@ const PopularCreator = () => {
             spaceBetween: 15,
           },
         }}
-        onSlideChange={(e) => console.log(e)}
         // slidesPerView={5}
         mousewheel={true}
         scrollbar={{ draggable: true }}
@@ -98,7 +100,7 @@ const PopularCreator = () => {
           clickable: true,
         }}
         modules={[Mousewheel, EffectFade]}
-        className="xl:w-10/12 w-full flex items-center justify-center"
+        className="xl:w-10/13 w-full flex items-center justify-center "
       >
         {CreatorData.map((item: any, index: number) => (
           <SwiperSlide key={index}>

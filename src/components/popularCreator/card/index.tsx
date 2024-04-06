@@ -14,7 +14,7 @@ const PopularCreatorCard: React.FC<CreatorCardPropsTypes> = ({
       <div className="flex flex-col items-center justify-center">
         <img className="mx-auto relative xl:w-fit w-full " src={cover} alt="" />
         <img
-          className="mx-auto  xl:w-11 w-18 absolute xl:top-20 top-28"
+          className="mx-auto  xl:w-12 w-18 absolute xl:top-24 top-28"
           src={creator}
           alt=""
         />

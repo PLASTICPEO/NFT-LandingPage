@@ -1,75 +1,76 @@
-import { useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useMotionValue,
-  useVelocity,
-  useAnimationFrame,
-} from "framer-motion";
-import { wrap } from "framer-motion";
+import ParallaxComponent from "./parallax";
+import BitcoinPlus from "../../assets/crypto-market/bitcoin.svg";
+import Binance from "../../assets/crypto-market/Binance.svg";
+import Okex from "../../assets/crypto-market/Okex.svg";
+import Terra from "../../assets/crypto-market/Terra.svg";
+import Covalent from "../../assets/crypto-market/Covalent.svg";
+import Solana from "../../assets/crypto-market/Solana.svg";
+import Etherium from "../../assets/crypto-market/Etherium.svg";
+import MetaMask from "../../assets/crypto-market/MetaMask.svg";
 
-interface ParallaxProps {
-  children: any;
-  baseVelocity: number;
-}
+const items = [
+  {
+    icon: Solana,
+  },
+  {
+    icon: BitcoinPlus,
+  },
+  {
+    icon: Binance,
+  },
+  {
+    icon: Okex,
+  },
+  {
+    icon: Terra,
+  },
+  {
+    icon: Covalent,
+  },
+  {
+    icon: MetaMask,
+  },
+  {
+    icon: Etherium,
+  },
+];
 
-const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) => {
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
-  });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false,
-  });
-
-  /**
-   * This is a magic wrapping for the length of the text - you
-   * have to replace for wrapping that works for you or dynamically
-   * calculate
-   */
-  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
-
-  const directionFactor = useRef<number>(1);
-  useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-    t;
-    /**
-     * This is what changes the direction of the scroll once we
-     * switch scrolling directions.
-     */
-    if (velocityFactor.get() < 0) {
-      directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
-      directionFactor.current = 1;
-    }
-
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
-
-    baseX.set(baseX.get() + moveBy);
-  });
-
-  /**
-   * The number of times to repeat the child text should be dynamically calculated
-   * based on the size of the text and viewport. Likewise, the x motion value is
-   * currently wrapped between -20 and -45% - this 25% is derived from the fact
-   * we have four children (100% / 4). This would also want deriving from the
-   * dynamically generated number of children.
-   */
+const CryptoMarket = () => {
   return (
-    <div className="parallax text-[#FFFFFF] my-10">
-      <motion.div className="scroller " style={{ x }}>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-      </motion.div>
+    <div className="mb-20">
+      <p className="text-4xl text-[#FFFFFF] text-center font-[Roboto] pb-20">
+        WE WORK WITH WORLD'S TOP COMPANIES
+      </p>
+      <ParallaxComponent baseVelocity={-5}>
+        <div className="flex items-center justify-center space-x-4 ">
+          {items.map((item: any, index: number) => {
+            return (
+              <img
+                className="xl:w-max w-44 "
+                key={index}
+                src={item.icon}
+                alt=""
+              />
+            );
+          })}
+        </div>
+      </ParallaxComponent>
+      <ParallaxComponent baseVelocity={5}>
+        <div className="flex items-center justify-center space-x-4">
+          {items.map((item: any, index: number) => {
+            return (
+              <img
+                className="xl:w-max w-44 "
+                key={index}
+                src={item.icon}
+                alt=""
+              />
+            );
+          })}
+        </div>
+      </ParallaxComponent>
     </div>
   );
 };
 
-export default ParallaxText;
+export default CryptoMarket;
