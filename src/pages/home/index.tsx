@@ -23,7 +23,16 @@ const Home = () => {
       <PopularCollections />
       <SubscribeComponent />
       <MobileMenu />
-      <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
+      <ParallaxText baseVelocity={-5}>
+        <div className="border-[1px] p-4 w-72 text-3xl font-Reddit">
+          Framer Motion
+        </div>
+      </ParallaxText>
+      <ParallaxText baseVelocity={5}>
+        <div className="border-[1px] p-4 w-72 text-3xl font-Reddit">
+          Framer Motion
+        </div>
+      </ParallaxText>
 
       <motion.div
         style={{ scaleX: scrollYProgress }}

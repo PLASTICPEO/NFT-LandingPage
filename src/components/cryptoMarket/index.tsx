@@ -11,7 +11,7 @@ import {
 import { wrap } from "framer-motion";
 
 interface ParallaxProps {
-  children: string;
+  children: any;
   baseVelocity: number;
 }
 
