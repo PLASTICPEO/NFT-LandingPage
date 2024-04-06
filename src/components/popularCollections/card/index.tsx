@@ -28,7 +28,11 @@ const PopularCollectionsCard: React.FC<PopularCollectionPropsTypes> = ({
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center justify-center space-x-2">
             <div onClick={() => favoriteToggle()}>
-              <img src={creatorImg} alt={creatorName} />
+              <img
+                className="rounded-lg w-14"
+                src={creatorImg}
+                alt={creatorName}
+              />
             </div>
 
             <div className="text-[#FFFFFF] font-Roboto">

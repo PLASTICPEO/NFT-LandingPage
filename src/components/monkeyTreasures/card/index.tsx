@@ -34,11 +34,14 @@ const TreasureCard: React.FC<TreasureCardPropsTypes> = ({
           />
         </div>
       </div>
-      <img
-        className="flex items-center justify-center w-full"
-        src={nft}
-        alt={nftName}
-      />
+      <a href="https://github.com/PLASTICPEO">
+        <img
+          className="flex items-center justify-center w-full xl:h-60 rounded-md"
+          src={nft}
+          alt={nftName}
+        />
+      </a>
+
       <div>
         <p className="text-lg mt-2">{nftName}</p>
         <p className="text-[#B8B8B8] font-thin">{category}</p>

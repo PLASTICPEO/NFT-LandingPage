@@ -1,6 +1,6 @@
 import CustomButton from "../button";
 import Logo from "../logo";
-import NavMenu from "../menu";
+import NavMenu from "../navigator";
 
 const menuItems = ["Home", "MarketPlace", "Creators", "Resource"];
 

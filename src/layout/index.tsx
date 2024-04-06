@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import MobileMenu from "../components/menu";
 
 const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (

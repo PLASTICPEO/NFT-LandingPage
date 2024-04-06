@@ -5,7 +5,7 @@ import ivan from "../../assets/popular-collection-creators/ivan.svg";
 import ivanCollection from "../../assets/popular-collections/ivan-collection.svg";
 import chris from "../../assets/popular-collection-creators/chris.svg";
 import chrisCollection from "../../assets/popular-collections/chris-collection.svg";
-import david from "../../assets/popular-collection-creators/david.svg";
+import david from "../../assets/plasticpeo.jpeg";
 import davidCollection from "../../assets/popular-collections/david-collection.svg";
 import jim from "../../assets/popular-collection-creators/jim.svg";
 import jimCollection from "../../assets/popular-collections/jim-collection.svg";
@@ -34,7 +34,7 @@ const popularCollectionData = [
   {
     collectionItem: davidCollection,
     creatorImg: david,
-    creatorName: "@david321",
+    creatorName: "@PLASTICPEO",
     collectionName: "Monkey Collection",
   },
   {

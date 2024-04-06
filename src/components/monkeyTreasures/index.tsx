@@ -3,7 +3,7 @@ import almond from "../../assets/treasure-monkey/almond.svg";
 import almondOwn from "../../assets/users/Ellipse1.svg";
 import bayl from "../../assets/treasure-monkey/bayl.svg";
 import baylOwn from "../../assets/users/Ellipse2.svg";
-import arab from "../../assets/treasure-monkey/arab.svg";
+import arab from "../../assets/plasticpeo.jpeg";
 import arabOwn from "../../assets/users/Ellipse3.svg";
 import diamond from "../../assets/treasure-monkey/diamond.svg";
 import diamondOwn from "../../assets/users/Ellipse4.svg";
@@ -43,7 +43,7 @@ const TreasureCardDate = [
   },
   {
     nft: arab,
-    nftName: "Arab Classy",
+    nftName: "PLASTICPEO",
     category: "Limited Edition",
     price: "12.3",
     ownName: "Monkey #412",
