@@ -2,7 +2,7 @@ const LegalFooter = () => {
   return (
     <div className="xl:flex items-center justify-between xl:space-y-0 space-y-4 text-[#B8B8B8] text-sm">
       <p>
-        2022 © Copyright DMONKEY. All Rights Reserved{" "}
+        2024 © Copyright DMONKEY. All Rights Reserved{" "}
         <a
           className="text-[#B8B8B8] hover:text-[#FFFFFF] animate-ping shadow-2xl shadow-[red]"
           href="https://github.com/PLASTICPEO"
